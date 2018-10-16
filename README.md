@@ -9,14 +9,14 @@ The dataset and pretrained models are available for [download]().
 ## Training from Scratch
 
 To train these models from scratch:
+1. Install the python dependencies **pip install -r requirements.txt**.
 1. Download the [dataset]().
-1. Set the **path_dataset** variable in the path_manage.py.example file
-1. remove the ".example" suffix from the path_manage.py.example file so that it is named path_manage.py
-1.
-1.
-1.
-1.
-1.
+1. Set the **path_dataset** variable in the **path_manage.py.example** file.
+1. Remove the **.example** suffix from the **path_manage.py.example** file so that it is named **path_manage.py**.
+1. Run the desired model **train.py** script in the experiments folder.
+
+To evaluate:
+1. Run the desired **embed.py**
 
 # Masters Thesis Summary
 
