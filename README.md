@@ -11,11 +11,13 @@ Inspired by recent work in human pose metric learning this thesis explores a fam
 
 This work explores the retreival of images across three spatial and one language-primitive similarity metric.
 
+### Spatial Metrics
+
+Consider two people in particular poses:
+
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/poses.png" width="300">
 </p>
-
-### Spatial Metrics
 
 2D similarity is calculated by first aligning the two poses, and then taking their mean per-joint distance in image space.
 
