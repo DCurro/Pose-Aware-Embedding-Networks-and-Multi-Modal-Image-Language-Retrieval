@@ -6,6 +6,10 @@ The provided code is intended to support the exploration of embedding spaces, an
 
 The dataset and pretrained models are available for [download]().
 
+To evaluate, after training:
+1. Copy the desired **embedding_0.py** to the corresponding experiment's results folder.
+1. Run the desired evaulation located in the respective eval folder.
+
 ## Training from Scratch
 
 To train these models from scratch:
@@ -15,8 +19,9 @@ To train these models from scratch:
 1. Remove the **.example** suffix from the **path_manage.py.example** file so that it is named **path_manage.py**.
 1. Run the desired model **train.py** script in the experiments folder.
 
-To evaluate:
-1. Run the desired **embed.py**
+To evaluate, after training:
+1. Run the desired **embed.py**.
+1. Run the desired evaulation located in the respective eval folder.
 
 # Masters Thesis Summary
 
