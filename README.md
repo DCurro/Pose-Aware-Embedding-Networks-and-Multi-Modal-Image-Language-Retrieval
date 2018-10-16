@@ -6,7 +6,10 @@ The provided code is intended to support the exploration of embedding spaces, an
 
 The dataset and pretrained models are available for [download]().
 
-To evaluate, after training:
+To evaluate:
+1. Install the python dependencies **pip install -r requirements.txt**.
+1. Download the [dataset]().
+1. Set the **path_dataset** variable in the **path_manage.py.example** file.
 1. Copy the desired **embedding_0.py** to the corresponding experiment's results folder.
 1. Run the desired evaulation located in the respective eval folder.
 
