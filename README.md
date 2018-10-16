@@ -57,15 +57,28 @@ The modified network is initialized with the convolutional weights of the origin
 
 ## Querying with Language
 
+Querying with images alone is limited. You might not have the images you want to begin a search. Alternatively, language descriptors should be easier to generate. A network archetecture and two approaches are defined to accomodate for language-based queries.
+
 To query with language, a new mode is trained to map from posebyte language descriptor to the the trained embedding space. More specifically, first the image network is trained (1+3). When complete, the language stream is trained (2+3). While training this new mode, the shared embedding space (3) remain unaltered. This process learns a new mapping onto the existing embedding space.
 
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/Thin-Slicing_multimodal.png" width="500">
 </p>
 
-## Conditional Queries
+### Conditional Queries
 
-## Origin Queries by Warping
+The first approach assumes that the relationship between each posebit is governed by a Normal Distribution. Conditionin the Normal Distribution on a desired set of conditions, maximum-likelihood estimation can be used to resolve the remaining bits. This entails simply taking the mean of the conditonal Normal Distribution. Consider the toy example of predicting the value of **bit a**, when **bit b** is one:
+
+<p align="center">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/conditional_posebyte.png" width="800">
+</p>
+
+With a subset of desired conditions, like "right knee is bent; left knee is bent," (indicated in red) we can then resolve a new posebyte w.
+<p align="center">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/conditional_posebyte_resolution.png" width="800">
+</p>
+
+### Origin Queries by Warping
 
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/MaskedEmbeddings.png" width="800">
