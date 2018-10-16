@@ -44,7 +44,7 @@ This work explores the retreival of images across three spatial and one language
 For any two poses, the similarity is considered.
 
 <p align="center">
-<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/poses.png" width="200">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/poses.png" width="300">
 </p>
 
 2D similarity is calculated by first aligning the two poses, and then taking their mean per-joint distance in image space.
