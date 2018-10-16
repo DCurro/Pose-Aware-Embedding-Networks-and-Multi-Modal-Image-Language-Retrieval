@@ -2,6 +2,8 @@
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language.
 
+This code is written in python 3.7.0, and uses PyTorch 0.4.1.
+
 ## No Training Required
 
 The dataset and pretrained models are available for [download]().
