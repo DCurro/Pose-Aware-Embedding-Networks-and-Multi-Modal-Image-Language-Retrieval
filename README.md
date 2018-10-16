@@ -37,7 +37,7 @@ Procrustes similarity is calculated by first aligning, and rotating the two pose
 
 ### Language Metric
 
-Language is framed as [a set of primitive statements](http://www.cs.toronto.edu/~fleet/research/Papers/posebits_cvpr2014.pdf), such as "left elbow is (not) bent." There are three kinds of language-primitives: joint angle, joint-pair distance, and joint-pair relative distance. Joint angle and joint-pair distance are determine by a predefined threshold, where the joint is "bent" if it is before the threshold, and two joints are "far" if they are beyond the threshold. Joint-pair relative distances tell if you a joint is "beyond" a relative joint with respect to the torso-center.
+Language is framed as a set of primitive statements [2](http://www.cs.toronto.edu/~fleet/research/Papers/posebits_cvpr2014.pdf), such as "left elbow is (not) bent." There are three kinds of language-primitives: joint angle, joint-pair distance, and joint-pair relative distance. Joint angle and joint-pair distance are determine by a predefined threshold, where the joint is "bent" if it is before the threshold, and two joints are "far" if they are beyond the threshold. Joint-pair relative distances tell if you a joint is "beyond" a relative joint with respect to the torso-center.
 
 Any one pose can then be described as a vector of binary values (a posebyte, composed of posebits).
 
@@ -47,8 +47,10 @@ Any one pose can then be described as a vector of binary values (a posebyte, com
 
 ## Querying with Images
 
+The network is used is a modified version of the [3](http://www.robots.ox.ac.uk/~vgg/research/deep_eval/), as outlined in Kwak et al. [1](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Kwak_Thin-Slicing_for_Pose_CVPR_2016_paper.pdf).
+
 <p align="center">
-<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/Thin-Slicing.png" width="400">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/Thin-Slicing.png" width="300">
 </p>
 
 ## Querying with Language
@@ -69,3 +71,30 @@ Link to the dataset (). Statement about the dataset.
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/dataset_annotations.png" width="600">
 </p>
 
+## Refrences
+
+[1] @InProceedings{Kwak_2016_CVPR,
+author = {Kwak, Suha and Cho, Minsu and Laptev, Ivan},
+title = {Thin-Slicing for Pose: Learning to Understand Pose Without Explicit Pose Estimation},
+booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+month = {June},
+year = {2016}
+}
+
+[2] @inproceedings{pons2014posebits,
+  title={Posebits for monocular human pose estimation},
+  author={Pons-Moll, Gerard and Fleet, David J and Rosenhahn, Bodo},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={2337--2344},
+  year={2014}
+}
+
+[3] @InProceedings{Chatfield14,
+  author       = "Chatfield, K. and Simonyan, K. and Vedaldi, A. and Zisserman, A.",
+  title        = "Return of the Devil in the Details: Delving Deep into Convolutional Nets",
+  booktitle    = "British Machine Vision Conference",
+  year         = "2014",
+  archivePrefix= "arXiv",
+  eprint       = "1405.3531",
+  primaryClass = "cs"
+}
