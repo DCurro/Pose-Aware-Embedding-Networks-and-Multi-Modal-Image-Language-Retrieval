@@ -27,3 +27,12 @@ Some background text about how this code supports my thesis (some link here).
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/MaskedEmbeddings.png" width="800">
 </p>
+
+### Dataset
+
+Link to the dataset (). Statement about the dataset.
+
+<p align="center">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/dataset_annotations.png" width="600">
+</p>
+
