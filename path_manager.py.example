@@ -14,10 +14,28 @@ class PathManager:
     path_distance_frame0_path_procrustes_train = path_dataset + 'similarity_table/procrustes/train_procrustes_distances_frame_0.npy'
     path_distance_frame0_path_procrustes_valtest = path_dataset + 'similarity_table/procrustes/valtest_procrustes_distances_frame_0.npy'
     # Hamming
-    path_distance_frame0_path_pb3_train = path_dataset + 'similarity_table/hamming/distance_frame0_train.npy'
-    path_distance_frame0_path_pb3_valtest = path_dataset + 'similarity_table/hamming/distance_frame0_valtest.npy'
-    path_nearfarsplit_frame0_path_pb3_train = path_dataset + 'similarity_table/hamming/near_far_train_frame0.npy'
-    path_nearfarsplit_frame0_path_pb3_val = path_dataset + 'similarity_table/hamming/near_far_val_frame0.npy'
+    path_distance_frame0_path_hamming_train = path_dataset + 'similarity_table/hamming/distance_frame0_train.npy'
+    path_distance_frame0_path_hamming_valtest = path_dataset + 'similarity_table/hamming/distance_frame0_valtest.npy'
+    path_nearfarsplit_frame0_path_hamming_train = path_dataset + 'similarity_table/hamming/near_far_train_frame0.npy'
+    path_nearfarsplit_frame0_path_hamming_val = path_dataset + 'similarity_table/hamming/near_far_val_frame0.npy'
+
+
+    #####################################################
+    #  Annotations
+    #####################################################
+    # 2D
+    path_annotations_2D_train = path_dataset+'/annotations/2d/'+'train.npy'
+    path_annotations_2D_valtest = path_dataset+'/annotations/2d/'+'valtest.npy'
+    # 3D
+    path_annotations_3D_train = path_dataset+'/annotations/3d/'+'train_rescaled.npy'
+    path_annotations_3D_valtest = path_dataset+'/annotations/3d/'+'valtest_rescaled.npy'
+    # Hamming
+    path_annotations_hamming_train_angle = path_dataset+'/annotations/hamming/'+'train_angles_0.npy'
+    path_annotations_hamming_train_distance = path_dataset+'/annotations/hamming/'+'train_distances_0.npy'
+    path_annotations_hamming_train_reldistance = path_dataset+'/annotations/hamming/'+'train_reldistances_0.npy'
+    path_annotations_hamming_valtest_angle = path_dataset+'/annotations/hamming/'+'valtest_angles_0.npy'
+    path_annotations_hamming_valtest_distance = path_dataset+'/annotations/hamming/'+'valtest_distances_0.npy'
+    path_annotations_hamming_valtest_reldistance = path_dataset+'/annotations/hamming/'+'valtest_reldistances_0.npy'
 
     #####################################################
     #  Data Split
@@ -34,4 +52,3 @@ class PathManager:
     # VGG Convolutional Weights
     #####################################################
     path_vgg_simple_weights = path_dataset + "/vggs_conv_weights/thinslicing_preconv_randfc.pth"
-

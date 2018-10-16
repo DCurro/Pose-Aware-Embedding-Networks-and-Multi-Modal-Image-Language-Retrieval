@@ -15,11 +15,11 @@ from nets.net_poseemb import Net
 
 
 # set the distance files
-distances_train_file = PathManager.path_distance_frame0_path_pb3_train
-distances_valtest_file = PathManager.path_distance_frame0_path_pb3_valtest
+distances_train_file = PathManager.path_distance_frame0_path_hamming_train
+distances_valtest_file = PathManager.path_distance_frame0_path_hamming_valtest
 
-nearfarsplit_train_file = PathManager.path_nearfarsplit_frame0_path_pb3_train
-nearfarsplit_val_file = PathManager.path_nearfarsplit_frame0_path_pb3_val
+nearfarsplit_train_file = PathManager.path_nearfarsplit_frame0_path_hamming_train
+nearfarsplit_val_file = PathManager.path_nearfarsplit_frame0_path_hamming_val
 
 # set the train and val dataset files
 dataset_train_txt = PathManager.path_dataset_train_txt
