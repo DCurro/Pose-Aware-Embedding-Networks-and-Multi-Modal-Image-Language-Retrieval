@@ -57,6 +57,12 @@ The modified network is initialized with the convolutional weights of the origin
 
 ## Querying with Language
 
+To query with language, a new mode is trained to map from posebyte language descriptor to the the trained embedding space. More specifically, first the image network is trained (1+3). When complete, the language stream is trained (2+3). While training this new mode, the shared embedding space (3) remain unaltered. This process learns a new mapping onto the existing embedding space.
+
+<p align="center">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/Thin-Slicing_multimodal.png" width="300">
+</p>
+
 ## Conditional Queries
 
 ## Origin Queries by Warping
