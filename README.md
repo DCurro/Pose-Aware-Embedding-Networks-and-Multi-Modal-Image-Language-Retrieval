@@ -75,28 +75,8 @@ Link to the dataset (). Statement about the dataset.
 
 ## Refrences
 
-[1] @InProceedings{Kwak_2016_CVPR,
-author = {Kwak, Suha and Cho, Minsu and Laptev, Ivan},
-title = {Thin-Slicing for Pose: Learning to Understand Pose Without Explicit Pose Estimation},
-booktitle = {The IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-month = {June},
-year = {2016}
-}
+[1] S. Kwak, M. Cho, and I. Laptev. Thin-slicing for pose: Learning to understand pose without explicit pose estimation. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 4938–4947. IEEE, 2016.
 
-[2] @inproceedings{pons2014posebits,
-  title={Posebits for monocular human pose estimation},
-  author={Pons-Moll, Gerard and Fleet, David J and Rosenhahn, Bodo},
-  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
-  pages={2337--2344},
-  year={2014}
-}
+[2] G. Pons-Moll, D. J. Fleet, and B. Rosenhahn. Posebits for monocular human pose estimation. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 2337–2344, 2014.
 
-[3] @InProceedings{Chatfield14,
-  author       = "Chatfield, K. and Simonyan, K. and Vedaldi, A. and Zisserman, A.",
-  title        = "Return of the Devil in the Details: Delving Deep into Convolutional Nets",
-  booktitle    = "British Machine Vision Conference",
-  year         = "2014",
-  archivePrefix= "arXiv",
-  eprint       = "1405.3531",
-  primaryClass = "cs"
-}
+[3] K. Chatfield, K. Simonyan, A. Vedaldi, and A. Zisserman. Return of the devil in the details: Delving deep into convolutional nets. In Proceedings of the British Machine Vision Conference, 2014.
