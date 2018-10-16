@@ -2,7 +2,21 @@
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language.
 
+## No Training Required
+
 The dataset and pretrained models are available for [download]().
+
+## Training from Scratch
+
+To train these models from scratch:
+1. Download the [dataset]().
+1. Set the **path_dataset** variable in the path_manage.py.example file
+1. remove the ".example" suffix from the path_manage.py.example file so that it is named path_manage.py
+1.
+1.
+1.
+1.
+1.
 
 # Masters Thesis Summary
 
