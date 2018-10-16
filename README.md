@@ -103,9 +103,21 @@ With a subset of desired conditions, like "right knee is bent; left knee is bent
 
 ### Origin Queries by Warping
 
+Instead of generating queries, this approach proposed to manipulate the embedding space directly. When searching for a subset of language conditions, said conditions will exist in multiple places on the embedding space in a variety of modes. By collpasing the subspace of interest which contains the desired subset of language conditions, these various modes can be brought to a common point (the origin), simplifying the search process.
+
+Computing the embeddings offline, this new model simply learns a **mask** which performs a point-wise multiplication warping of the original embedding space.
+
 <p align="center">
-<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/MaskedEmbeddings.png" width="800">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/MaskedEmbeddings2.png" width="800">
 </p>
+
+With the warped embedding space, a simple nearest neighbours search starting from the origin yields the set of embeddings ordered by relevance:
+
+<p align="center">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/zero_query.png" width="800">
+</p>
+
+One consequence of this approach is that a new mask must be learned per langauge condition subset.
 
 ## Dataset and Pretrained Models
 
