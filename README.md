@@ -1,4 +1,8 @@
-# Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval
+# Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval
+
+Some background text about how this code supports my thesis (some link here).
+
+# Masters Thesis Summary
 
 Some background text about how this code supports my thesis (some link here).
 
