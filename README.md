@@ -67,7 +67,7 @@ The modified network is initialized with the convolutional weights of the origin
 
 ## Dataset and Pretrained Models
 
-Link to the dataset (). Statement about the dataset.
+The dataset, available [here]() is composed of images, with corresponding 2D, 3D, and language-primitive descriptors. For example:
 
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/dataset_annotations.png" width="600">
