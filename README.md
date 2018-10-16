@@ -47,7 +47,7 @@ Any one pose can then be described as a vector of binary values (a posebyte, com
 
 ## Querying with Images
 
-The network is used is a modified version of the [3](http://www.robots.ox.ac.uk/~vgg/research/deep_eval/), as outlined in Kwak et al. [1](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Kwak_Thin-Slicing_for_Pose_CVPR_2016_paper.pdf).
+The network is used is a modified version of the &#91;3 (http://www.robots.ox.ac.uk/~vgg/research/deep_eval/), as outlined in Kwak et al. [1](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Kwak_Thin-Slicing_for_Pose_CVPR_2016_paper.pdf).
 
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/Thin-Slicing.png" width="300">
