@@ -49,6 +49,8 @@ Any one pose can then be described as a vector of binary values (a posebyte, com
 
 The network is used is a modified version of the [&#91;3&#93;](http://www.robots.ox.ac.uk/~vgg/research/deep_eval/), as outlined in Kwak et al. [&#91;1&#93;](https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/Kwak_Thin-Slicing_for_Pose_CVPR_2016_paper.pdf).
 
+The modified network is initialized with the convolutional weights of the original network. The final fully connected layers are removed and replaced. Finally, the network is concluded with an l2-normalization layer, such that the final embedding vector lays on a unit-hypershere.
+
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/Thin-Slicing.png" width="300">
 </p>
