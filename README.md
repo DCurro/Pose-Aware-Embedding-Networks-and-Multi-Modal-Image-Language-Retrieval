@@ -113,13 +113,36 @@ With the warped embedding space, a simple nearest neighbours search starting fro
 
 One consequence of this approach is that a new mask must be learned per langauge condition subset.
 
-## Dataset and Pretrained Models
+## Dataset
 
 The dataset, available [here]() is composed of images, with corresponding 2D, 3D, and language-primitive descriptors. For example:
 
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/dataset_annotations.png" width="600">
 </p>
+
+## Evaluation
+
+### Language Queries
+
+Querying with Artifical Posebytes (top rows) and Masks (bottoms):
+
+<p align="center">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/query_examples_pb_and_mask.png" width="600">
+</p>
+
+Observing that Masks order images by visual saliency (how obvious the language condition is). For example, in row 5 we can see that as you move further away from the origin in large uniform steps, the left wrist starts as far above the neck as possible and then slowly decends until it is below.
+
+<p align="center">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/query_escape_zero.png" width="600">
+</p>
+
+Observing the learned Masks, we can see the negative condition ("is not") and the positive condition ("is") reside on what appear to be mutually exclusive subspaces.
+
+<p align="center">
+<img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/masks.png" width="600">
+</p>
+
 
 ## Refrences
 
