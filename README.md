@@ -1,10 +1,15 @@
 # Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval
 
-Some background text about how this code supports my thesis (some link here).
+The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language.
+
+The dataset and pretrained models are available for [download]().
 
 # Masters Thesis Summary
 
-Some background text about how this code supports my thesis (some link here).
+A thesis presented to Ryerson University in partial fulfillment of the requirements for the degree of Master of Science in the program of Computer Science.
+
+Domenico Curro
+MSc. Computer Science.
 
 ## Abstract
 
