@@ -39,7 +39,7 @@ Procrustes similarity is calculated by first aligning, and rotating the two pose
 
 ### Language Metric
 
-Language is framed as (a set of primitive statements)[http://www.cs.toronto.edu/~fleet/research/Papers/posebits_cvpr2014.pdf], such as "left elbow is (not) bent." There are three kinds of language-primitives: joint angle, joint-pair distance, and joint-pair relative distance. Joint angle and joint-pair distance are determine by a predefined threshold, where the joint is "bent" if it is before the threshold, and two joints are "far" if they are beyond the threshold. Joint-pair relative distances tell if you a joint is "beyond" a relative joint with respect to the torso-center.
+Language is framed as [a set of primitive statements](http://www.cs.toronto.edu/~fleet/research/Papers/posebits_cvpr2014.pdf), such as "left elbow is (not) bent." There are three kinds of language-primitives: joint angle, joint-pair distance, and joint-pair relative distance. Joint angle and joint-pair distance are determine by a predefined threshold, where the joint is "bent" if it is before the threshold, and two joints are "far" if they are beyond the threshold. Joint-pair relative distances tell if you a joint is "beyond" a relative joint with respect to the torso-center.
 
 Any one pose can then be described as a vector of binary values (a posebyte, composed of posebits).
 
