@@ -28,7 +28,7 @@ Some background text about how this code supports my thesis (some link here).
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/MaskedEmbeddings.png" width="800">
 </p>
 
-### Dataset
+### Dataset and Pretrained Models
 
 Link to the dataset (). Statement about the dataset.
 
