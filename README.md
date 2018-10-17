@@ -6,15 +6,14 @@ The dataset and pretrained models are available for [download]().
 
 This code is written in python 3.7.0, and uses PyTorch 0.4.1.
 
-## Usage
+## Setting up
 
-Setting up:
 1. Install the python dependencies **pip install -r requirements.txt**.
 1. Download the [dataset]().
 1. Set the **path_dataset** variable in the **path_manager.py.example** file.
 1. Raname **path_manager.py.example** to **path_manager.py**.
 
-### Just Evaluation; No Training Required
+## Just Evaluation; No Training Required
 
 Evaluating the pose-aware embeddings:
 1. Copy the desired **precomputed_embeddings/image/*mode*/embedding_0.py** to the corresponding **experiments/image/*mode*/embeddings** folder.
@@ -32,7 +31,7 @@ Evaluating the pose-aware masks:
 1. Copy the contents of **precomputed_masks/** to the corresponding **experiments/language_mask/masks/** folder.
 1. Run the desired evaulation located in the respective eval folder.
 
-### Training from Scratch
+## Training from Scratch
 
 To train and evalute these pose-aware embeddings:
 1. Run the desired model **experiments/*mode*/train.py** script.
