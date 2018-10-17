@@ -316,7 +316,7 @@ def train(epoch):
     global train_losses
     global val_losses
 
-    val_iters = 100
+    val_iters = 500
 
     train_loss_mean = []
     for batch_idx, data in enumerate(train_loader):
@@ -329,11 +329,11 @@ def train(epoch):
         loss.backward()
         optimizer.step()
 
-        print(str(batch_idx) + ': ' + str(float(loss.data)))
-
         train_loss_mean += [float(loss.data)]
 
         if batch_idx % val_iters == 0:
+            print('epoch ' + str(epoch) + ', batch ' + str(batch_idx) + ': ' + str(float(loss.data)))
+
             train_losses += [np.mean(train_loss_mean)]
             val_losses += [val(5)]
             draw_plot(train_losses, val_losses, iter_display=val_iters)
