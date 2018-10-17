@@ -16,7 +16,7 @@ This code is written in python 3.7.0, and uses PyTorch 0.4.1.
 ## Just Evaluation; No Training Required
 
 Evaluating the pose-aware embeddings:
-1. Copy the desired `precomputed_embeddings/image/*mode*/embedding_0.py` to the corresponding `experiments/image/*mode*/embeddings` folder.
+1. Copy the desired `precomputed_embeddings/image/*/embedding_0.py` to the corresponding `experiments/image/*/embeddings` folder.
 1. Run the desired evaulation located in the respective eval folder.
 
 Evaluating the language mode:
@@ -34,9 +34,9 @@ Evaluating the pose-aware masks:
 ## Training from Scratch
 
 To train and evalute these pose-aware embeddings:
-1. Run the desired model `experiments/*mode*/train.py` script.
-1. Once complete, run `experiments/*mode*/embed.py`.
-1. Once complete, run the desired evaluation script in `experiments/*mode*/eval/`.
+1. Run the desired model `experiments/*/train.py` script.
+1. Once complete, run `experiments/*/embed.py`.
+1. Once complete, run the desired evaluation script in `experiments/*/eval/`.
 
 To train and evaluate the language mode:
 1. Run the `experiments/language/train.py`.
