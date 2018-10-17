@@ -2,17 +2,31 @@
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language.
 
+The dataset and pretrained models are available for [download]().
+
 This code is written in python 3.7.0, and uses PyTorch 0.4.1.
 
 ## No Training Required
 
-The dataset and pretrained models are available for [download]().
-
-To evaluate:
+Setting up:
 1. Install the python dependencies **pip install -r requirements.txt**.
 1. Download the [dataset]().
 1. Set the **path_dataset** variable in the **path_manage.py.example** file.
-1. Copy the desired **embedding_0.py** to the corresponding experiment's results folder.
+
+Evaluating the pose-aware embeddings:
+1. Copy the desired **precomputed_embeddings/image/*mode*/embedding_0.py** to the corresponding **experiments/image/*mode*/embeddings** folder.
+1. Run the desired evaulation located in the respective eval folder.
+
+Evaluating the language mode:
+1. Copy the **precomputed_embeddings/language/embedding_valtest_0.py** to the corresponding **experiments/language** embeddings folder.
+1. Run the desired evaulation located in the respective eval folder.
+
+Evaluating the conditional posebytes:
+1. Copy the **precomputed_embeddings/language_conditional/embedding_conditional.py** to the corresponding **experiments/language_conditional/** embeddings folder.
+1. Run the desired evaulation located in the respective eval folder.
+
+Evaluating the pose-aware masks:
+1. Copy the contents of **precomputed_masks/** to the corresponding **experiments/language_mask/masks/** folder.
 1. Run the desired evaulation located in the respective eval folder.
 
 ## Training from Scratch
