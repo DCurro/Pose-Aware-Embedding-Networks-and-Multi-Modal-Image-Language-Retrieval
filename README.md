@@ -6,12 +6,15 @@ The dataset and pretrained models are available for [download]().
 
 This code is written in python 3.7.0, and uses PyTorch 0.4.1.
 
-## No Training Required
+## Usage
 
 Setting up:
 1. Install the python dependencies **pip install -r requirements.txt**.
 1. Download the [dataset]().
-1. Set the **path_dataset** variable in the **path_manage.py.example** file.
+1. Set the **path_dataset** variable in the **path_manager.py.example** file.
+1. Raname **path_manager.py.example** to **path_manager.py**.
+
+### Just Evaluation; No Training Required
 
 Evaluating the pose-aware embeddings:
 1. Copy the desired **precomputed_embeddings/image/*mode*/embedding_0.py** to the corresponding **experiments/image/*mode*/embeddings** folder.
@@ -29,18 +32,26 @@ Evaluating the pose-aware masks:
 1. Copy the contents of **precomputed_masks/** to the corresponding **experiments/language_mask/masks/** folder.
 1. Run the desired evaulation located in the respective eval folder.
 
-## Training from Scratch
+### Training from Scratch
 
-To train these models from scratch:
-1. Install the python dependencies **pip install -r requirements.txt**.
-1. Download the [dataset]().
-1. Set the **path_dataset** variable in the **path_manage.py.example** file.
-1. Remove the **.example** suffix from the **path_manage.py.example** file so that it is named **path_manage.py**.
-1. Run the desired model **train.py** script in the experiments folder.
+To train and evalute these pose-aware embeddings:
+1. Run the desired model **experiments/*mode*/train.py** script.
+1. Once complete, run **experiments/*mode*/embed.py**.
+1. Once complete, run the desired evaluation script in **experiments/*mode*/eval/**.
 
-To evaluate, after training:
-1. Run the desired **embed.py**.
-1. Run the desired evaulation located in the respective eval folder.
+To train and evaluate the language mode:
+1. Run the **experiments/language/train.py**.
+1. Once complete, run **experiments/language/embed.py**.
+1. Once complete, run the desired evaluation script in **experiments/language/eval/**.
+
+To produce and evaluate the conditional posebytes:
+1. Run the **experiments/language_conditional/generate_single_question_posebyte.py**.
+1. Once complete, run **experiments/language_conditional/embed.py**.
+1. Once complete, run the desired evaluation script in **experiments/language_conditional/eval/**.
+
+To train and evaluate the conditional masks:
+1. Run the **experiments/language_masks/train.py**.
+1. Once complete, run the desired evaluation script in **experiments/language_masks/eval/**.
 
 # Masters Thesis Summary
 
