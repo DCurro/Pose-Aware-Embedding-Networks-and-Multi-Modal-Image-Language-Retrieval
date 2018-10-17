@@ -3,3 +3,5 @@ path_manager.py
 **/__pycache__/
 .idea
 /venv/
+*.npy
+*.pth

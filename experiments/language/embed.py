@@ -87,7 +87,7 @@ if __name__ == '__main__':
     model.cuda()
 
     state = model.state_dict()
-    state_dict = torch.load(results_path + 'thinslicing2_20.pth')
+    state_dict = torch.load(results_path + 'model_20.pth')
     state.update(state_dict)
     model.load_state_dict(state)
 

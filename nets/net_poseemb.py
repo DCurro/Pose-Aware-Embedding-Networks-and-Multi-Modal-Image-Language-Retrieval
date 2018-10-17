@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
-from other.SpatialCrossMapLRN_temp import SpatialCrossMapLRN_temp
+from nets.layers.SpatialCrossMapLRN_temp import SpatialCrossMapLRN_temp
 
 class Net(nn.Module):
     def __init__(self, l2_norm_dump=False):
@@ -62,7 +62,6 @@ class Net(nn.Module):
         x = self.drop6(x)
         x = self.fc7(x)
 
-        # l2_norm = x.div(torch.norm(x, p=2, dim=1).repeat(x.size(1),1))
         l2_norm = x.div(torch.norm(x, p=2, dim=1).repeat(x.size(1), 1).t())
 
         if self.l2_norm_dump:

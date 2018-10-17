@@ -125,7 +125,7 @@ def train(epoch):
 
     draw_plot(train_losses, val_losses, 1)
 
-    torch.save(model.state_dict(), results_path + 'thinslicing2_' + str(epoch) + '.pth')
+    torch.save(model.state_dict(), results_path + 'model_' + str(epoch) + '.pth')
 
 
 if __name__ == '__main__':

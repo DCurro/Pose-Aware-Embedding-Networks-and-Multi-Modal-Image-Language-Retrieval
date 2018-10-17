@@ -3,7 +3,7 @@ import numpy as np
 from path_manager import PathManager
 
 
-embedding_path = '../embeddings/embeddings_0.npy'
+embedding_path = '../embeddings/embeddings_valtest_0.npy'
 embeddings = np.load(embedding_path)
 
 gt_distances = np.load(PathManager.path_distance_frame0_path_2d_valtest)
@@ -20,9 +20,6 @@ chances = 10
 
 indexes_at_k = np.zeros(shape=(embedding_val.shape[0],chances))
 distances_at_k = np.zeros(shape=(embedding_val.shape[0],chances))
-chance_indexes_at_k = np.zeros(shape=(embedding_val.shape[0],chances))
-chance_distances_at_k = np.zeros(shape=(embedding_val.shape[0],chances))
-
 
 for val_idx in range(embedding_val.shape[0]):
     for k in range(chances):
@@ -35,9 +32,6 @@ for val_idx in range(embedding_val.shape[0]):
 
         indexes_at_k[val_idx, k] = index
         distances_at_k[val_idx, k] = gt_distances_val[val_idx, gt_near_indices[val_idx, index]]
-        chance_indexes_at_k[val_idx, k] = chance_index
-        chance_distances_at_k[val_idx, k] = gt_distances_val[val_idx, gt_near_indices[val_idx, chance_index]]
-
 
 best_at_k = np.minimum.accumulate(indexes_at_k, axis=1)
 worst_at_k = np.maximum.accumulate(indexes_at_k, axis=1)
@@ -49,18 +43,6 @@ mean_best_at_k = np.mean(best_at_k, axis=0)
 mean_mean_at_k = np.mean(mean_at_k, axis=0)
 mean_worst_at_k = np.mean(worst_at_k, axis=0)
 
-chance_best_at_k = np.minimum.accumulate(chance_indexes_at_k, axis=1)
-chance_worst_at_k = np.maximum.accumulate(chance_indexes_at_k, axis=1)
-chance_mean_at_k = np.zeros(shape=(embedding_val.shape[0],chances))
-for k in range(chances):
-    chance_mean_at_k[:,k] = np.mean(chance_indexes_at_k[:,:k+1], axis=1)
-
-chance_mean_best_at_k = np.mean(chance_best_at_k, axis=0)
-chance_mean_mean_at_k = np.mean(chance_mean_at_k, axis=0)
-chance_mean_worst_at_k = np.mean(chance_worst_at_k, axis=0)
-
 print('mean distance@k:' + str(np.round(np.mean(distances_at_k,axis=0),decimals=2)) )
-print('random chance:' + str(np.round(np.mean(chance_distances_at_k,axis=0),decimals=2)) )
 print('')
 print('hit@k: ' + str(np.round(100.0*np.mean(best_at_k <= 50, axis=0),decimals=2)) + '%')
-print('random chance: ' + str(np.round(100.0*np.mean(chance_best_at_k <= 50, axis=0),decimals=2)) + '%')
