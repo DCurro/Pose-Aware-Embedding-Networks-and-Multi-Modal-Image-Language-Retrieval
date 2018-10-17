@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import random
 from PIL import Image
 import scipy.misc
+from glob import glob
 from other.spatial_transforms import (Compose, Normalize, Scale, CenterCrop, ToTensor)
 from other.mean_vggs import get_mean
 from path_manager import PathManager
@@ -353,25 +354,31 @@ if __name__ == '__main__':
     val_losses = []
     results_path = 'results/'
 
+    start_epoch = np.max([int(weights.split('_')[-1].split('.pth')[0])+1 for weights in glob(results_path+'model_*.pth')] + [0])
+
     model = Net()
-    raw_state_dict = model.state_dict()
-    state_dict = torch.load(PathManager.path_vggs_conv_weights)  # vgg convs, random fcs
-    state_dict['conv1.weight'] = state_dict.pop('0.weight')
-    state_dict['conv1.bias'] = state_dict.pop('0.bias')
-    state_dict['conv2.weight'] = state_dict.pop('4.weight')
-    state_dict['conv2.bias'] = state_dict.pop('4.bias')
-    state_dict['conv3.weight'] = state_dict.pop('7.weight')
-    state_dict['conv3.bias'] = state_dict.pop('7.bias')
-    state_dict['conv4.weight'] = state_dict.pop('9.weight')
-    state_dict['conv4.bias'] = state_dict.pop('9.bias')
-    state_dict['conv5.weight'] = state_dict.pop('11.weight')
-    state_dict['conv5.bias'] = state_dict.pop('11.bias')
-    state_dict.pop('15.1.weight')
-    state_dict.pop('15.1.bias')
-    state_dict.pop('18.1.weight')
-    state_dict.pop('18.1.bias')
-    raw_state_dict.update(state_dict)
-    model.load_state_dict(raw_state_dict)
+    if start_epoch > 0:
+        print('Resuming from model_'+str(start_epoch-1)+'.pth')
+        model.load_state_dict(torch.load(results_path+'model_'+str(start_epoch-1)+'.pth'))
+    else:
+        raw_state_dict = model.state_dict()
+        state_dict = torch.load(PathManager.path_vggs_conv_weights) # vgg convs, random fcs
+        state_dict['conv1.weight'] = state_dict.pop('0.weight')
+        state_dict['conv1.bias'] = state_dict.pop('0.bias')
+        state_dict['conv2.weight'] = state_dict.pop('4.weight')
+        state_dict['conv2.bias'] = state_dict.pop('4.bias')
+        state_dict['conv3.weight'] = state_dict.pop('7.weight')
+        state_dict['conv3.bias'] = state_dict.pop('7.bias')
+        state_dict['conv4.weight'] = state_dict.pop('9.weight')
+        state_dict['conv4.bias'] = state_dict.pop('9.bias')
+        state_dict['conv5.weight'] = state_dict.pop('11.weight')
+        state_dict['conv5.bias'] = state_dict.pop('11.bias')
+        state_dict.pop('15.1.weight')
+        state_dict.pop('15.1.bias')
+        state_dict.pop('18.1.weight')
+        state_dict.pop('18.1.bias')
+        raw_state_dict.update(state_dict)
+        model.load_state_dict(raw_state_dict)
     model = model.cuda()
 
     # val_dataset = ThinSlicingValset()
@@ -383,7 +390,7 @@ if __name__ == '__main__':
     # for batch_idx, data in enumerate(train_loader):
     #     x = 5
 
-    for epoch in range(0, 7):
+    for epoch in range(start_epoch, 7):
         anneal_factor = 0.2**epoch
 
         optimizer = optim.SGD([
@@ -407,3 +414,5 @@ if __name__ == '__main__':
         val_loader = torch.utils.data.DataLoader(dataset_val, num_workers=0, shuffle=True, batch_size=1)
 
         train(epoch)
+
+    print('Training complete')

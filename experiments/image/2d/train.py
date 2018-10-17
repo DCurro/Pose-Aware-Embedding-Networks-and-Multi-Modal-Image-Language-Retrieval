@@ -415,3 +415,5 @@ if __name__ == '__main__':
         val_loader = torch.utils.data.DataLoader(dataset_val, num_workers=0, shuffle=True, batch_size=1)
 
         train(epoch)
+
+    print('Training complete')
