@@ -3,7 +3,7 @@ import numpy as np
 from path_manager import PathManager
 
 
-embedding_path = '../embeddings/embeddings_valtest.npy'
+embedding_path = '../embeddings/embeddings_valtest_0.npy'
 embeddings = np.load(embedding_path)
 
 gt_distances = np.load(PathManager.path_distance_frame0_path_hamming_valtest)

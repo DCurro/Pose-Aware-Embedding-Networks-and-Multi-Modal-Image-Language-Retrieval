@@ -123,7 +123,7 @@ def embed(suffix):
         embeddings += [l2_norm.data.cpu().numpy()]
 
     embeddings = np.concatenate(embeddings)
-    np.save('embeddings/embeddings_' + suffix + '.npy', embeddings)
+    np.save('embeddings/embeddings_' + suffix + '_0.npy', embeddings)
 
 
 if __name__ == '__main__':
