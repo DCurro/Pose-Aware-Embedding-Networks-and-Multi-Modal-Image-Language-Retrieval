@@ -9,7 +9,8 @@ This code is written in python 3.7.0, and uses PyTorch 0.4.1.
 ## Setting up
 
 1. Install the python dependencies `pip install -r requirements.txt`.
-1. Download the [dataset]().
+1. Download the [dataset](), and unzip.
+1. Unzip images_single.zip.
 1. Set the `path_dataset` variable in the `path_manager.py.example` file.
 1. Raname `path_manager.py.example` to `path_manager.py`.
 
