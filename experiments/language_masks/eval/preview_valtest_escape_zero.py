@@ -2,7 +2,6 @@ import numpy as np
 import scipy.misc
 import matplotlib.pyplot as plt
 from scipy.spatial.distance import cdist
-import json
 from path_manager import PathManager
 
 
@@ -28,17 +27,7 @@ with open(sequence_file, 'r') as in_file:
 
 embedding_tst_raw = np.load('../../language/embeddings/embeddings_valtest_0.npy')[1919:]
 
-angle_info_filename = PathManager.path_annotations_pose_info+'pose_info_frame_0_angles.json'
-with open(angle_info_filename, 'r') as data_file:
-    angle_info = json.load(data_file)['angles']
-
-test_idxs = np.load(PathManager.path_annotations_pose_info_testidxs)
-
-angle_values = []
-for key in angle_info:
-    angle_values += [list(np.array(angle_info[key])[test_idxs])]
-
-for bit in range(angles_val.shape[1]):
+for bit in range(posebyte_test.shape[1]):
     for bit_value in [1,0]:
 
         try:
@@ -81,7 +70,6 @@ for bit in range(angles_val.shape[1]):
 
                 image_to_show = scipy.misc.imread(image_name)
                 plt.imshow(scipy.misc.imresize(image_to_show, (288, 288)))
-                plt.title(str(np.round(angle_values[bit][near_idx-1919],1)))
                 plt.setp(axes.get_xticklabels(), visible=False)
                 plt.setp(axes.get_yticklabels(), visible=False)
                 plt.axis('off')

@@ -30,7 +30,6 @@ class Net(nn.Module):
 
         x = self.fc3(x)
 
-        # l2_norm = x.div(torch.norm(x, p=2, dim=1).repeat(1,x.size(1)))
         l2_norm = x.div(torch.norm(x, p=2, dim=1).repeat(x.size(1), 1).t())
 
         mm = torch.mm(l2_norm, y.t())

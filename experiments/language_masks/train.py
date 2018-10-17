@@ -45,38 +45,38 @@ if __name__ == '__main__':
 
                 return posebytes
 
-        class ThinSlicingValset(torch.utils.data.dataset.Dataset):
-            def __init__(self, bit, bit_value):
-                super(ThinSlicingValset, self).__init__()
-
-                self.bit = bit
-                self.bit_value = bit_value
-
-                self.posebyte = posebyte_valtest
-
-            def __getitem__(self, index):
-                return self.load_batch(index)
-
-            def __len__(self):
-                return self.posebyte.shape[0]
-
-            def load_batch(self, iter):
-                positives = np.where(self.posebyte[:, self.bit] == self.bit_value)[0]
-                negatives = np.where(self.posebyte[:, self.bit] != self.bit_value)[0]
-
-                shuffled = lambda seq, rnd=random.random: sorted(seq, key=lambda _: rnd())
-
-                selections = shuffled(positives)[0:55] + shuffled(negatives)[0:56]
-                # selections = positives[0:55].tolist() + negatives[0:56].tolist()
-
-                posebytes = []
-
-                for selection in selections:
-                    posebytes += [self.posebyte[selection]]
-
-                posebytes = torch.from_numpy(np.vstack(posebytes))
-
-                return posebytes
+        # class ThinSlicingValset(torch.utils.data.dataset.Dataset):
+        #     def __init__(self, bit, bit_value):
+        #         super(ThinSlicingValset, self).__init__()
+        #
+        #         self.bit = bit
+        #         self.bit_value = bit_value
+        #
+        #         self.posebyte = posebyte_valtest[:1919]
+        #
+        #     def __getitem__(self, index):
+        #         return self.load_batch(index)
+        #
+        #     def __len__(self):
+        #         return self.posebyte.shape[0]
+        #
+        #     def load_batch(self, iter):
+        #         positives = np.where(self.posebyte[:, self.bit] == self.bit_value)[0]
+        #         negatives = np.where(self.posebyte[:, self.bit] != self.bit_value)[0]
+        #
+        #         shuffled = lambda seq, rnd=random.random: sorted(seq, key=lambda _: rnd())
+        #
+        #         selections = shuffled(positives)[0:55] + shuffled(negatives)[0:56]
+        #         # selections = positives[0:55].tolist() + negatives[0:56].tolist()
+        #
+        #         posebytes = []
+        #
+        #         for selection in selections:
+        #             posebytes += [self.posebyte[selection]]
+        #
+        #         posebytes = torch.from_numpy(np.vstack(posebytes))
+        #
+        #         return posebytes
 
         def draw_plot(train_losses, val_losses, iter_display):
             x = np.array(range(0, len(train_losses))) * iter_display
@@ -123,16 +123,16 @@ if __name__ == '__main__':
 
             model.eval()
 
-            for batch_idx, data in enumerate(val_loader):
-                if batch_idx == 1:
-                    break
-
-                batch = data.numpy()
-
-                input_data = Variable(torch.squeeze(torch.from_numpy(batch)).float().cuda())
-                loss, l2_norm = model(input_data)
-
-                val_loss_acc += float(loss.data)
+            # for batch_idx, data in enumerate(val_loader):
+            #     if batch_idx == 1:
+            #         break
+            #
+            #     batch = data.numpy()
+            #
+            #     input_data = Variable(torch.squeeze(torch.from_numpy(batch)).float().cuda())
+            #     loss, l2_norm = model(input_data)
+            #
+            #     val_loss_acc += float(loss.data)
 
             val_loss_acc /= (batch_idx + 1)
 
@@ -169,9 +169,9 @@ if __name__ == '__main__':
         model.load_state_dict(state)
 
         train_dataset = ThinSlicingTrainset(bit, bit_value=bit_value)
-        val_dataset = ThinSlicingValset(bit, bit_value=bit_value)
+        # val_dataset = ThinSlicingValset(bit, bit_value=bit_value)
         train_loader = torch.utils.data.DataLoader(train_dataset, num_workers=0, shuffle=True, batch_size=1, drop_last=True)
-        val_loader = torch.utils.data.DataLoader(val_dataset, num_workers=0, shuffle=True, batch_size=1, drop_last=True)
+        # val_loader = torch.utils.data.DataLoader(val_dataset, num_workers=0, shuffle=True, batch_size=1, drop_last=True)
 
         for epoch in range(0, 10):
             optimizer = optim.SGD([
