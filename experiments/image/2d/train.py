@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import random
 from PIL import Image
 import scipy.misc
+from glob import glob
 from other.spatial_transforms import (Compose, Normalize, Scale, CenterCrop, ToTensor)
 from other.mean_vggs import get_mean
 from path_manager import PathManager
@@ -26,6 +27,7 @@ dataset_valtest_txt = PathManager.path_dataset_valtest_txt
 class ThinSlicingTrainset(torch.utils.data.dataset.Dataset):
     def __init__(self, far_max=None):
         super(ThinSlicingTrainset, self).__init__()
+        print('Loading Thin-Motion Trainset')
 
         self.far_min = 31
         self.far_max = far_max
@@ -163,8 +165,8 @@ class ThinSlicingTrainset(torch.utils.data.dataset.Dataset):
 
 class ThinSlicingValset(torch.utils.data.dataset.Dataset):
     def __init__(self):
-        print('Loading Thin-Motion Valset')
         super(ThinSlicingValset, self).__init__()
+        print('Loading Thin-Motion Valset')
 
         self.image_root = PathManager.path_image_root
 
@@ -304,7 +306,7 @@ def train(epoch):
     global train_losses
     global val_losses
 
-    val_iters = 100
+    val_iters = 500
 
     train_loss_mean = []
     for batch_idx, data in enumerate(train_loader):
@@ -317,11 +319,11 @@ def train(epoch):
         loss.backward()
         optimizer.step()
 
-        print(str(batch_idx) + ': ' + str(float(loss.data)))
-
         train_loss_mean += [float(loss.data)]
 
         if batch_idx % val_iters == 0:
+            print('epoch '+str(epoch)+', batch '+str(batch_idx)+': '+ str(float(loss.data)))
+
             train_losses += [np.mean(train_loss_mean)]
             val_losses += [val(5)]
             draw_plot(train_losses, val_losses, iter_display=val_iters)
@@ -353,25 +355,31 @@ if __name__ == '__main__':
     val_losses = []
     results_path = 'results/'
 
+    start_epoch = np.max([int(weights.split('_')[-1].split('.pth')[0])+1 for weights in glob(results_path+'model_*.pth')] + [0])
+
     model = Net()
-    raw_state_dict = model.state_dict()
-    state_dict = torch.load(PathManager.path_vgg_simple_weights) # vgg convs, random fcs
-    state_dict['conv1.weight'] = state_dict.pop('0.weight')
-    state_dict['conv1.bias'] = state_dict.pop('0.bias')
-    state_dict['conv2.weight'] = state_dict.pop('4.weight')
-    state_dict['conv2.bias'] = state_dict.pop('4.bias')
-    state_dict['conv3.weight'] = state_dict.pop('7.weight')
-    state_dict['conv3.bias'] = state_dict.pop('7.bias')
-    state_dict['conv4.weight'] = state_dict.pop('9.weight')
-    state_dict['conv4.bias'] = state_dict.pop('9.bias')
-    state_dict['conv5.weight'] = state_dict.pop('11.weight')
-    state_dict['conv5.bias'] = state_dict.pop('11.bias')
-    state_dict.pop('15.1.weight')
-    state_dict.pop('15.1.bias')
-    state_dict.pop('18.1.weight')
-    state_dict.pop('18.1.bias')
-    raw_state_dict.update(state_dict)
-    model.load_state_dict(raw_state_dict)
+    if start_epoch > 0:
+        print('Resuming from model_'+str(start_epoch-1)+'.pth')
+        model.load_state_dict(torch.load(results_path+'model_'+str(start_epoch-1)+'.pth'))
+    else:
+        raw_state_dict = model.state_dict()
+        state_dict = torch.load(PathManager.path_vggs_conv_weights) # vgg convs, random fcs
+        state_dict['conv1.weight'] = state_dict.pop('0.weight')
+        state_dict['conv1.bias'] = state_dict.pop('0.bias')
+        state_dict['conv2.weight'] = state_dict.pop('4.weight')
+        state_dict['conv2.bias'] = state_dict.pop('4.bias')
+        state_dict['conv3.weight'] = state_dict.pop('7.weight')
+        state_dict['conv3.bias'] = state_dict.pop('7.bias')
+        state_dict['conv4.weight'] = state_dict.pop('9.weight')
+        state_dict['conv4.bias'] = state_dict.pop('9.bias')
+        state_dict['conv5.weight'] = state_dict.pop('11.weight')
+        state_dict['conv5.bias'] = state_dict.pop('11.bias')
+        state_dict.pop('15.1.weight')
+        state_dict.pop('15.1.bias')
+        state_dict.pop('18.1.weight')
+        state_dict.pop('18.1.bias')
+        raw_state_dict.update(state_dict)
+        model.load_state_dict(raw_state_dict)
     model = model.cuda()
 
     # val_dataset = ThinSlicingValset()
@@ -383,7 +391,7 @@ if __name__ == '__main__':
     # for batch_idx, data in enumerate(train_loader):
     #     x = 5
 
-    for epoch in range(0, 7):
+    for epoch in range(start_epoch, 7):
         anneal_factor = 0.2**epoch
 
         optimizer = optim.SGD([
@@ -402,7 +410,7 @@ if __name__ == '__main__':
             far_max = far_min + 1000
 
         dataset_trn = ThinSlicingTrainset(far_max=far_max)
-        train_loader = torch.utils.data.DataLoader(dataset_trn, num_workers=1, shuffle=True, batch_size=1)
+        train_loader = torch.utils.data.DataLoader(dataset_trn, num_workers=3, shuffle=True, batch_size=1)
         dataset_val = ThinSlicingValset()
         val_loader = torch.utils.data.DataLoader(dataset_val, num_workers=0, shuffle=True, batch_size=1)
 

@@ -2,7 +2,18 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
+import numpy as np
 from nets.layers.SpatialCrossMapLRN_temp import SpatialCrossMapLRN_temp
+
+
+def tile(a, dim, n_tile):
+    init_dim = a.size(dim)
+    repeat_idx = [1] * a.dim()
+    repeat_idx[dim] = n_tile
+    a = a.repeat(*(repeat_idx))
+    order_index = torch.LongTensor(np.concatenate([init_dim * np.arange(n_tile) + i for i in range(init_dim)])).cuda()
+    return torch.index_select(a, dim, order_index)
+
 
 class Net(nn.Module):
     def __init__(self, l2_norm_dump=False):
@@ -68,16 +79,9 @@ class Net(nn.Module):
             loss = l2_norm
             return loss, l2_norm
 
-        anchors = torch.squeeze(l2_norm[0,:]).repeat(525,1)
-        positives = Variable(torch.zeros(525, 128)).cuda()
-        negatives = Variable(torch.zeros(525, 128)).cuda()
-
-        count = 0
-        for p_index in range(1,6):
-            for n_index in range(6,111):
-                positives[count] = torch.squeeze(l2_norm[p_index,:])
-                negatives[count] = torch.squeeze(l2_norm[n_index,:])
-                count += 1
+        anchors = l2_norm[0].expand([525,128])
+        positives = tile(l2_norm[1:6],0,105)
+        negatives = l2_norm[6:].expand(5,105,128).flatten().view(525,128)
 
         loss = F.triplet_margin_loss(anchors, positives, negatives, p=2, margin=0.2)
 

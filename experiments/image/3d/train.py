@@ -355,7 +355,7 @@ if __name__ == '__main__':
 
     model = Net()
     raw_state_dict = model.state_dict()
-    state_dict = torch.load(PathManager.path_vgg_simple_weights)  # vgg convs, random fcs
+    state_dict = torch.load(PathManager.path_vggs_conv_weights)  # vgg convs, random fcs
     state_dict['conv1.weight'] = state_dict.pop('0.weight')
     state_dict['conv1.bias'] = state_dict.pop('0.bias')
     state_dict['conv2.weight'] = state_dict.pop('4.weight')
