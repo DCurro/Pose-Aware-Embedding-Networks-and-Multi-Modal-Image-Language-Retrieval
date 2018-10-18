@@ -3,7 +3,7 @@
 * [Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval](#Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval)
   * [Setting up](#setting-up)
   * [Training from Scratch](#training-from-scratch)
-  * [Just Evaluation; No Training Required](#just-evaluation-no-training-required)
+  * [Evaluation Only](#Evaluation-Only)
 
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language. A summary may be found [here](https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/tree/master/thesis_summary), and the full document may be found [here](http://dcurro.com/Masters_Thesis.pdf).
@@ -41,7 +41,7 @@ To train and evaluate the conditional masks:
 1. Run the `experiments/language_masks/train.py`.
 1. Once complete, run the desired evaluation script in `experiments/language_masks/eval/`.
 
-## Just Evaluation; No Training Required
+## Evaluation Only
 
 Evaluating the pose-aware embeddings:
 1. Copy the desired `precomputed_embeddings/image/*/embedding_0.py` to the corresponding `experiments/image/*/embeddings` folder.
