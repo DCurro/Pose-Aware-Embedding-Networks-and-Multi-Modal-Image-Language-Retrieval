@@ -5,3 +5,4 @@ path_manager.py
 /venv/
 *.npy
 *.pth
+gh-md-toc
