@@ -1,10 +1,5 @@
 
 # Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval
-* [Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval](#Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval)
-  * [Setting up](#setting-up)
-  * [Training from Scratch](#training-from-scratch)
-  * [Evaluation Only](#Evaluation-Only)
-
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language. A summary may be found [here](https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/tree/master/thesis_summary), and the full document may be found [here](http://dcurro.com/Masters_Thesis.pdf).
 
