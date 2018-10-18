@@ -78,6 +78,8 @@ To query with language, a new mode is trained to map from posebyte language desc
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/Thin-Slicing_multimodal.png" width="500">
 </p>
 
+Once the new text-based input mode is mapped is trained, retrieving images becomes a simple matter of embedding the query language descriptor, followed by a nearest neighbours search starting from the embedding location.
+
 ### Conditional Queries
 
 The first approach assumes that the relationship between each posebit is governed by a Normal Distribution. Conditionin the Normal Distribution on a desired set of conditions, maximum-likelihood estimation can be used to resolve the remaining bits. This entails simply taking the mean of the conditonal Normal Distribution. Consider the toy example of predicting the value of `bit a`, when `bit b` is one:
