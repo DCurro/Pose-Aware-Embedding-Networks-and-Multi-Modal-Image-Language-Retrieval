@@ -2,8 +2,8 @@
 # Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval
 * [Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval](#Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval)
   * [Setting up](#setting-up)
-  * [Just Evaluation; No Training Required](#just-evaluation-no-training-required)
   * [Training from Scratch](#training-from-scratch)
+  * [Just Evaluation; No Training Required](#just-evaluation-no-training-required)
 
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language. A summary may be found [here](https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/tree/master/thesis_summary), and the full document may be found [here](http://dcurro.com/Masters_Thesis.pdf).
@@ -19,24 +19,6 @@ This code is written in python 3.7.0, and uses PyTorch 0.4.1.
 1. Unzip images_single.zip.
 1. Set the `path_dataset` variable in the `path_manager.py.example` file.
 1. Raname `path_manager.py.example` to `path_manager.py`.
-
-## Just Evaluation; No Training Required
-
-Evaluating the pose-aware embeddings:
-1. Copy the desired `precomputed_embeddings/image/*/embedding_0.py` to the corresponding `experiments/image/*/embeddings` folder.
-1. Run the desired evaulation located in the respective eval folder.
-
-Evaluating the language mode:
-1. Copy the `precomputed_embeddings/language/embedding_valtest_0.py` to the corresponding `experiments/language` embeddings folder.
-1. Run the desired evaulation located in the respective eval folder.
-
-Evaluating the conditional posebytes:
-1. Copy the `precomputed_embeddings/language_conditional/embedding_conditional.py` to the corresponding `experiments/language_conditional/` embeddings folder.
-1. Run the desired evaulation located in the respective eval folder.
-
-Evaluating the pose-aware masks:
-1. Copy the contents of `precomputed_masks/` to the corresponding `experiments/language_mask/masks/` folder.
-1. Run the desired evaulation located in the respective eval folder.
 
 ## Training from Scratch
 
@@ -58,3 +40,22 @@ To produce and evaluate the conditional posebytes:
 To train and evaluate the conditional masks:
 1. Run the `experiments/language_masks/train.py`.
 1. Once complete, run the desired evaluation script in `experiments/language_masks/eval/`.
+
+## Just Evaluation; No Training Required
+
+Evaluating the pose-aware embeddings:
+1. Copy the desired `precomputed_embeddings/image/*/embedding_0.py` to the corresponding `experiments/image/*/embeddings` folder.
+1. Run the desired evaulation located in the respective eval folder.
+
+Evaluating the language mode:
+1. Copy the `precomputed_embeddings/language/embedding_valtest_0.py` to the corresponding `experiments/language` embeddings folder.
+1. Run the desired evaulation located in the respective eval folder.
+
+Evaluating the conditional posebytes:
+1. Copy the `precomputed_embeddings/language_conditional/embedding_conditional.py` to the corresponding `experiments/language_conditional/` embeddings folder.
+1. Run the desired evaulation located in the respective eval folder.
+
+Evaluating the pose-aware masks:
+1. Copy the contents of `precomputed_masks/` to the corresponding `experiments/language_mask/masks/` folder.
+1. Run the desired evaulation located in the respective eval folder.
+
