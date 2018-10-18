@@ -1,8 +1,8 @@
 
 # Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval
-      * [Setting up](#setting-up)
-      * [Just Evaluation; No Training Required](#just-evaluation-no-training-required)
-      * [Training from Scratch](#training-from-scratch)
+ * [Setting up](#setting-up)
+ * [Just Evaluation; No Training Required](#just-evaluation-no-training-required)
+ * [Training from Scratch](#training-from-scratch)
 
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language.
@@ -184,7 +184,7 @@ Observing the learned Masks, we can see the negative condition ("is not") and th
 </p>
 
 
-## Refrences
+## References
 
 [1] S. Kwak, M. Cho, and I. Laptev. Thin-slicing for pose: Learning to understand pose without explicit pose estimation. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 4938–4947. IEEE, 2016.
 
