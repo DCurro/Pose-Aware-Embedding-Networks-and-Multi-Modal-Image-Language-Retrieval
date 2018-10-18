@@ -1,3 +1,5 @@
+# Table of Contents
+
    * [Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval](#pose-aware-embedding-networks-and-multi-modal-image-language-retrieval)
       * [Setting up](#setting-up)
       * [Just Evaluation; No Training Required](#just-evaluation-no-training-required)
