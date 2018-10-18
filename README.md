@@ -2,31 +2,56 @@
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language.
 
-This code is written in python 3.7.0, and uses PyTorch 0.4.1.
-
-## No Training Required
-
 The dataset and pretrained models are available for [download]().
 
-To evaluate:
-1. Install the python dependencies **pip install -r requirements.txt**.
-1. Download the [dataset]().
-1. Set the **path_dataset** variable in the **path_manage.py.example** file.
-1. Copy the desired **embedding_0.py** to the corresponding experiment's results folder.
+This code is written in python 3.7.0, and uses PyTorch 0.4.1.
+
+## Setting up
+
+1. Install the python dependencies `pip install -r requirements.txt`.
+1. Download the [dataset](), and unzip.
+1. Unzip images_single.zip.
+1. Set the `path_dataset` variable in the `path_manager.py.example` file.
+1. Raname `path_manager.py.example` to `path_manager.py`.
+
+## Just Evaluation; No Training Required
+
+Evaluating the pose-aware embeddings:
+1. Copy the desired `precomputed_embeddings/image/*/embedding_0.py` to the corresponding `experiments/image/*/embeddings` folder.
+1. Run the desired evaulation located in the respective eval folder.
+
+Evaluating the language mode:
+1. Copy the `precomputed_embeddings/language/embedding_valtest_0.py` to the corresponding `experiments/language` embeddings folder.
+1. Run the desired evaulation located in the respective eval folder.
+
+Evaluating the conditional posebytes:
+1. Copy the `precomputed_embeddings/language_conditional/embedding_conditional.py` to the corresponding `experiments/language_conditional/` embeddings folder.
+1. Run the desired evaulation located in the respective eval folder.
+
+Evaluating the pose-aware masks:
+1. Copy the contents of `precomputed_masks/` to the corresponding `experiments/language_mask/masks/` folder.
 1. Run the desired evaulation located in the respective eval folder.
 
 ## Training from Scratch
 
-To train these models from scratch:
-1. Install the python dependencies **pip install -r requirements.txt**.
-1. Download the [dataset]().
-1. Set the **path_dataset** variable in the **path_manage.py.example** file.
-1. Remove the **.example** suffix from the **path_manage.py.example** file so that it is named **path_manage.py**.
-1. Run the desired model **train.py** script in the experiments folder.
+To train and evalute these pose-aware embeddings:
+1. Run the desired model `experiments/*/train.py` script.
+1. Once complete, run `experiments/*/embed.py`.
+1. Once complete, run the desired evaluation script in `experiments/*/eval/`.
 
-To evaluate, after training:
-1. Run the desired **embed.py**.
-1. Run the desired evaulation located in the respective eval folder.
+To train and evaluate the language mode:
+1. Run the `experiments/language/train.py`.
+1. Once complete, run `experiments/language/embed.py`.
+1. Once complete, run the desired evaluation script in `experiments/language/eval/`.
+
+To produce and evaluate the conditional posebytes:
+1. Run the `experiments/language_conditional/generate_single_question_posebyte.py`.
+1. Once complete, run `experiments/language_conditional/embed.py`.
+1. Once complete, run the desired evaluation script in `experiments/language_conditional/eval/`.
+
+To train and evaluate the conditional masks:
+1. Run the `experiments/language_masks/train.py`.
+1. Once complete, run the desired evaluation script in `experiments/language_masks/eval/`.
 
 # Masters Thesis Summary
 
@@ -94,7 +119,7 @@ To query with language, a new mode is trained to map from posebyte language desc
 
 ### Conditional Queries
 
-The first approach assumes that the relationship between each posebit is governed by a Normal Distribution. Conditionin the Normal Distribution on a desired set of conditions, maximum-likelihood estimation can be used to resolve the remaining bits. This entails simply taking the mean of the conditonal Normal Distribution. Consider the toy example of predicting the value of **bit a**, when **bit b** is one:
+The first approach assumes that the relationship between each posebit is governed by a Normal Distribution. Conditionin the Normal Distribution on a desired set of conditions, maximum-likelihood estimation can be used to resolve the remaining bits. This entails simply taking the mean of the conditonal Normal Distribution. Consider the toy example of predicting the value of `bit a`, when `bit b` is one:
 
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/conditional_posebyte.png" width="400">
@@ -109,7 +134,7 @@ With a subset of desired conditions, like "right knee is bent; left knee is bent
 
 Instead of generating queries, this approach proposed to manipulate the embedding space directly. When searching for a subset of language conditions, said conditions will exist in multiple places on the embedding space in a variety of modes. By collpasing the subspace of interest which contains the desired subset of language conditions, these various modes can be brought to a common point (the origin), simplifying the search process.
 
-Computing the embeddings offline, this new model simply learns a **mask** which performs a point-wise multiplication warping of the original embedding space.
+Computing the embeddings offline, this new model simply learns a `mask` which performs a point-wise multiplication warping of the original embedding space.
 
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/MaskedEmbeddings2.png" width="600">
