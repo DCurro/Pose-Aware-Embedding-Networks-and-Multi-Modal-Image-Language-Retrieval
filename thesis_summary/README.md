@@ -1,6 +1,6 @@
-# Masters Thesis Summary
+# Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval
 
-   * [Masters Thesis Summary](#masters-thesis-summary)
+   * [Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval](#Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval)
       * [Abstract](#abstract)
       * [Similarity Metrics](#similarity-metrics)
          * [Spatial Metrics](#spatial-metrics)
@@ -14,7 +14,7 @@
          * [Language Queries](#language-queries)
       * [Refrences](#refrences)
 
-A thesis presented to Ryerson University in partial fulfillment of the requirements for the degree of Master of Science in the program of Computer Science.
+This is a summary of the thesis presented to Ryerson University in partial fulfillment of the requirements for the degree of Master of Science in the program of Computer Science. The full document may be found [here](http://dcurro.com/Masters_Thesis.pdf)
 
 Domenico Curro
 MSc. Computer Science.
