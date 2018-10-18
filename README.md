@@ -1,3 +1,21 @@
+   * [Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval](#pose-aware-embedding-networks-and-multi-modal-image-language-retrieval)
+      * [Setting up](#setting-up)
+      * [Just Evaluation; No Training Required](#just-evaluation-no-training-required)
+      * [Training from Scratch](#training-from-scratch)
+   * [Masters Thesis Summary](#masters-thesis-summary)
+      * [Abstract](#abstract)
+      * [Similarity Metrics](#similarity-metrics)
+         * [Spatial Metrics](#spatial-metrics)
+         * [Language Metric](#language-metric)
+      * [Querying with Images](#querying-with-images)
+      * [Querying with Language](#querying-with-language)
+         * [Conditional Queries](#conditional-queries)
+         * [Origin Queries by Warping](#origin-queries-by-warping)
+      * [Dataset](#dataset)
+      * [Evaluation](#evaluation)
+         * [Language Queries](#language-queries)
+      * [Refrences](#refrences)
+
 # Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language.
