@@ -16,6 +16,8 @@
 
 This is a summary of the thesis presented to Ryerson University in partial fulfillment of the requirements for the degree of Master of Science in the program of Computer Science. The full document may be found [here](http://dcurro.com/Masters_Thesis.pdf).
 
+The [code](https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval) and [dataset and pretrained models]() have been made publically available.
+
 Domenico Curro
 MSc. Computer Science.
 
