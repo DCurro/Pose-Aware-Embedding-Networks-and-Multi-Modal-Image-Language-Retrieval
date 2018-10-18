@@ -12,7 +12,7 @@
       * [Dataset](#dataset)
       * [Evaluation](#evaluation)
          * [Language Queries](#language-queries)
-      * [Refrences](#refrences)
+      * [References](#references)
 
 This is a summary of the thesis presented to Ryerson University in partial fulfillment of the requirements for the degree of Master of Science in the program of Computer Science. The full document may be found [here](http://dcurro.com/Masters_Thesis.pdf).
 
