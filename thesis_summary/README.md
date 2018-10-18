@@ -14,7 +14,7 @@
          * [Language Queries](#language-queries)
       * [Refrences](#refrences)
 
-This is a summary of the thesis presented to Ryerson University in partial fulfillment of the requirements for the degree of Master of Science in the program of Computer Science. The full document may be found [here](http://dcurro.com/Masters_Thesis.pdf)
+This is a summary of the thesis presented to Ryerson University in partial fulfillment of the requirements for the degree of Master of Science in the program of Computer Science. The full document may be found [here](http://dcurro.com/Masters_Thesis.pdf).
 
 Domenico Curro
 MSc. Computer Science.
@@ -138,7 +138,7 @@ Observing the learned Masks, we can see the negative condition ("is not") and th
 </p>
 
 
-## Refrences
+## References
 
 [1] S. Kwak, M. Cho, and I. Laptev. Thin-slicing for pose: Learning to understand pose without explicit pose estimation. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 4938–4947. IEEE, 2016.
 
