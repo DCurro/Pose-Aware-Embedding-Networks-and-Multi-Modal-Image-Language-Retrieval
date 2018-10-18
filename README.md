@@ -1,8 +1,9 @@
 
 # Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval
- * [Setting up](#setting-up)
- * [Just Evaluation; No Training Required](#just-evaluation-no-training-required)
- * [Training from Scratch](#training-from-scratch)
+* [Pose-Aware Embedding Networks and Multi-Modal Image-Language Retrieval](#Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval)
+  * [Setting up](#setting-up)
+  * [Just Evaluation; No Training Required](#just-evaluation-no-training-required)
+  * [Training from Scratch](#training-from-scratch)
 
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language.
