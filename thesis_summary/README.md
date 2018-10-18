@@ -66,6 +66,8 @@ The modified network is initialized with the convolutional weights of the origin
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/Thin-Slicing.png" width="300">
 </p>
 
+Once the model is trained, retrieval becomes a simple matter of embedding the query image, followed by a nearest neighbours search starting from the embedding location.
+
 ## Querying with Language
 
 Querying with images alone is limited. You might not have the images you want to begin a search. Alternatively, language descriptors should be easier to generate. A network archetecture and two approaches are defined to accomodate for language-based queries.
