@@ -6,7 +6,7 @@
   * [Training from Scratch](#training-from-scratch)
 
 
-The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language.
+The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language. A summary may be found [here](https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/tree/master/thesis_summary), and the full document may be found [here](http://dcurro.com/Masters_Thesis.pdf).
 
 The dataset and pretrained models are available for [download]().
 
