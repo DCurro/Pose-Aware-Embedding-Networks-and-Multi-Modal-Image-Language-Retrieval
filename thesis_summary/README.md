@@ -1,5 +1,19 @@
 # Masters Thesis Summary
 
+   * [Masters Thesis Summary](#masters-thesis-summary)
+      * [Abstract](#abstract)
+      * [Similarity Metrics](#similarity-metrics)
+         * [Spatial Metrics](#spatial-metrics)
+         * [Language Metric](#language-metric)
+      * [Querying with Images](#querying-with-images)
+      * [Querying with Language](#querying-with-language)
+         * [Conditional Queries](#conditional-queries)
+         * [Origin Queries by Warping](#origin-queries-by-warping)
+      * [Dataset](#dataset)
+      * [Evaluation](#evaluation)
+         * [Language Queries](#language-queries)
+      * [Refrences](#refrences)
+
 A thesis presented to Ryerson University in partial fulfillment of the requirements for the degree of Master of Science in the program of Computer Science.
 
 Domenico Curro
