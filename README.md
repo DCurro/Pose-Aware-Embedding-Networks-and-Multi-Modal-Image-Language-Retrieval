@@ -3,14 +3,14 @@
 
 The provided code is intended to support the exploration of embedding spaces, and multi-modal embedding spaces, especially for language. A summary may be found [here](https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/tree/master/thesis_summary), and the full document may be found [here](http://dcurro.com/Masters_Thesis.pdf).
 
-The dataset and pretrained models are available for [download]().
+The dataset and pretrained models are available for [download](https://1drv.ms/u/s!AhXrHb3FQ28fjk7V6eKpqQxLWAni).
 
 This code is written in python 3.7.0, and uses PyTorch 0.4.1.
 
 ## Setting up
 
 1. Install the python dependencies `pip install -r requirements.txt`.
-1. Download the [dataset](), and unzip.
+1. Download the [dataset](https://1drv.ms/u/s!AhXrHb3FQ28fjk7V6eKpqQxLWAni), and unzip.
 1. Unzip images_single.zip.
 1. Set the `path_dataset` variable in the `path_manager.py.example` file.
 1. Raname `path_manager.py.example` to `path_manager.py`.
