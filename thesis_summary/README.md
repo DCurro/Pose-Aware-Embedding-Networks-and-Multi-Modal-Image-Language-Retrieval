@@ -16,7 +16,7 @@
 
 This is a summary of the thesis presented to Ryerson University in partial fulfillment of the requirements for the degree of Master of Science in the program of Computer Science. The full document may be found [here](http://dcurro.com/Masters_Thesis.pdf).
 
-The [code](https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval) and [dataset and pretrained models]() have been made publically available.
+The [code](https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval) and [dataset and pretrained models](https://1drv.ms/u/s!AhXrHb3FQ28fjk7V6eKpqQxLWAni) have been made publically available.
 
 Domenico Curro
 MSc. Computer Science.
@@ -115,7 +115,7 @@ One consequence of this approach is that a new mask must be learned per langauge
 
 ## Dataset
 
-The dataset, available [here]() is composed of images, with corresponding 2D, 3D, and language-primitive descriptors. For example:
+The dataset, available [here](https://1drv.ms/u/s!AhXrHb3FQ28fjk7V6eKpqQxLWAni) is composed of images, with corresponding 2D, 3D, and language-primitive descriptors. For example:
 
 <p align="center">
 <img src="https://github.com/DCurro/Pose-Aware-Embedding-Networks-and-Multi-Modal-Image-Language-Retrieval/blob/master/github_images/dataset_annotations.png" width="600">
